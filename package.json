@@ -12,5 +12,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel daarangovi@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oyeu/bonusEntrega1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oyeu/bonusEntrega1/issues"
+  },
+  "homepage": "https://github.com/oyeu/bonusEntrega1#readme"
 }
