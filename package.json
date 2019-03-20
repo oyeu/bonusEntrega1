@@ -1,0 +1,15 @@
+{
+  "name": "entrega1",
+  "version": "1.0.1",
+  "description": "primera entrega",
+  "main": "Matricula.js",
+  "dependencies": {
+    "yargs": "^13.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel daarangovi@gmail.com",
+  "license": "ISC"
+}
