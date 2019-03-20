@@ -13,6 +13,7 @@ const opciones = {
     alias: 'c'
   }
 }
+//const fs = require('fs');
 const {cursos, imprimirCursos} = require ('./Cursos');
 const argv = require('yargs')
             .command('inscribir', 'Inscripcion de cursos', opciones)
