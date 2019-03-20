@@ -13,19 +13,19 @@ const opciones = {
     alias: 'c'
   }
 }
-const fs = require('fs');
 const {cursos, imprimirCursos} = require ('./Cursos');
 const argv = require('yargs')
             .command('inscribir', 'Inscripcion de cursos', opciones)
             .argv
+const express = require('express')
+const app = express()
 //Funcion que crea el archivo de texto con la inscripción-----------------------
 let crearArchivo = curso => {
   texto = 'El estudiante ' + argv.n + ', identificado con CC: ' + argv.c + '\n' +
           'se ha matriculado al curso \n' + curso.nombre + ' con id: '+ curso.id +
           ' el cual tiene un costo de '+ curso.valor + ' pesos y una intensidad horaria de ' + curso.duracion + ' horas.';
-  fs.writeFile('matricula.txt', texto, (err)=>{
-    if (err) throw (err);
-    console.log('se ha matriculado con exito!');
+  app.get('/', function (req, res) {
+    res.send(texto)
   })
 }
 
@@ -36,10 +36,14 @@ if (argv.i == undefined) {
 else {
   let curso = cursos.find( cu => cu.id == argv.i)
   if (curso == undefined) {
-    console.log('el id ingresado no coincide con el de ningun curso');
+    app.get('/', function (req, res) {
+      res.send("el id ingresado no coincide con el de ningun curso")
+    })
     imprimirCursos(cursos);
   }
   else{
     crearArchivo(curso);
   }
 }
+
+app.listen(3000)
